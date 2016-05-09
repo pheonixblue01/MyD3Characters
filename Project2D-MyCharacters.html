@@ -1,0 +1,1008 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> My D3 Characters </title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">	<link href="./css/custom.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:black; font-color:#A8A8A8;">
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./index.html"> Home </a>				</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2A.html"> Part A </a>			</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2B-1.html"> Part B </a>		</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2C.html"> Part C </a>			</div>
+</div>
+<div class="page-header" align="center" style="padding-top:0px; padding-bottom:0px">
+	<style> .logoholder{ width:1050px; height:135px;}	</style>	<div class="logoholder">	<img src="./Images/Header-Left.png" style="float:left">
+		<img src="./Images/CharactersLogo.png"  style="float:left">	<img src="./Images/Header-Right.png"  style="float:left"></div>		</div>
+<div class"row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+	<style> .nav-pills  li.active a, .nav-pills li.active a:hover {background-color:#000000; vertical-align:middle;}
+			.nav-pills li.doubleListItem a, .nav-pills li.doubleListItem a:hover {padding-top:0pt; padding-bottom: 0pt;}
+	</style>
+	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+		<ul class="nav nav-pills nav-justified">
+			<li role="presentation">				<a href="./Project2D.html">Home</a>						</li>
+			<li role="presentation">				<a href="./Project2D-MyAccount.html">Account</a>		</li>
+			<li role="presentation" class="active">	<a href="./Project2D-MyCharacters.html">Characters</a>	</li>
+			<li role="presentation">				<a href="./Project2D-Classes.html">Classes</a>			</li>
+			<li role="presentation">				<a href="./Project2D-Login.html">Login</a>				</li>
+			<li role="presentation">				<a href="./Project2D-Register.html">Register</a>		</li>
+		</ul>
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+</div>
+	<br><br><hr>
+<div class="row">	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- empty row to create space --></div>	</div>
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		<div class="sidebar-nav-fixed affix">
+			<ul class="nav nav-tabs tabs-left" style="width:9%;  background-color:black; font-color:#A8A8A8;">
+				<style>
+					.nav-tabs{background-color:#000000;}
+					.tab-content{ background-color:black;font-color:gray; }
+					.sidebar-nav-fixed > li, .sidebar-nav-fixed  li > a { width:140px; text-align:left;	padding-left:0pt; }
+					.sidebar-nav-fixed{ width:140px; margin:2px; }	.nav-header > p { width:140px; text-align:left; padding-left:0pt;} 
+				</style>
+				<li><a href="#ViewCharacters" data-toggle="tab">My Character</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-9">	
+		<div class="tab-content">
+			<div class="tab-pane active" id="ViewCharacters"> 
+				<div class="row">
+					<div class="col-md-4">		<img id="portraitHolder" src="./Images/Backgrounds/wizard_female.jpg"	width="334" height="450">	<br></div>
+					<div class="col-md-3">
+						<div class="row">
+<!--							<style>	.dropdown-menu li:hover, .dropdown-menu li:focus {color:black; background-color:#3D59AB; background-image:none; filter:none;}</style>
+							<div class="dropdown">
+								<button class"btn btn-primary dropdown-toggle" type="button" position="cursor" data-toggle="dropdown" style="width:200px;"> Class Selector
+									<span class="caret"></span>	</button>
+								<ul class="dropdown-menu scrollable-menu" id="portrait-selector" onclick="setImage1()" role="menu"
+									style="height:auto; max-height:150px; overflow-x:hidden; width:222px;">
+									<li data-id="1" ><img src="./Images/icons/barbarian_female_icon.png" width="42" height="42"> Barbarian (Female)</li>
+									<li data-id="2"><img src="./Images/icons/barbarian_female_icon.png" width="42" height="42"> Barbarian (Male)</li>
+									<li data-id="3"><img src="./Images/icons/crusader_female_icon.png" width="42" height="42"> Crusader (Female)</li>
+									<li data-id="4"><img src="./Images/icons/crusader_male_icon.png" width="42" height="42"> Crusader (Male)</li>	
+									<li data-id="5"><img src="./Images/icons/demonhunter_female_icon.png" width="42" height="42"> Demon Hunter (Female)</li>
+									<li data-id="6"><img src="./Images/icons/demonhunter_male_icon.png" width="42" height="42"> Demon Hunter (Male)</li>
+									<li data-id="7"><img src="./Images/icons/monk_female_icon.png" width="42" height="42"> Monk (Female)</li>
+									<li data-id="8"><img src="./Images/icons/monk_male_icon.png" width="42" height="42"> Monk (Male)</li>
+									<li data-id="9"><img src="./Images/icons/witchdoctor_female_icon.png" width="42" height="42"> Witch Doctor (Female)</li>
+									<li data-id="10"><img src="./Images/icons/witchdoctor_male_icon.png" width="42" height="42"> Witch Doctor (Male)</li>
+									<li data-id="11"><img src="./Images/icons/wizard_female_icon.png" width="42" height="42"> Wizard (Female)</li>
+									<li data-id="12"><img src="./Images/icons/wizard_male_icon.png" width="42" height="42"> Wizard (Male)</li>
+								</ul>
+							</div>			Commented Out-->
+						</div><!-- row ender -->
+						<div class="row">
+							<div style="width:265px; height:550px; overflow-x: hidden;">
+							<br>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Attributes </b> </p></div>
+								</div>
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Strength		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 77	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Dexterity		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 77	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Inteligence	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 9,617	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Vitality		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 3,517	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,135,399	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Toughness		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 35,559,335	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> Recovery		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 836,534	</div>
+								</div> <!-- end internal row -->
+								<hr>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Offense </b> </p></div>
+								</div>
+								<font size="2">
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Damage Increased by:		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 10.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Bonus Damage to Elites</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Attacks per Second		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1.5	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Attack Speed Increase		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Critical Hit Chance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 58%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Critical Hit Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +438.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Area Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 114.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Cooldown Reduction		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 19.5%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Fire Damage Increase	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 20.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Meteor Damage Increase</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 15.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Spectral Blade Increase	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 30.00%</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Weapon Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 757,944	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Elemental DPS		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,362,479	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Elite DPS		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,135,399	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per 100 Intelligence		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 14,022	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per Crit Chance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 16,768	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per Crit Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 2,262	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per Attack Speed		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 13,625	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per Elemental Dmg		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 11,354	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> DPS per Weapon Damage		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 671	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Enemy Damage Taken	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 20.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Damage Multiplier		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 15,536.21%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Effective DPS		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 209,812,189	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Effective DPH		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 140,061,541	</div>
+								</div> <!-- end internal row -->
+								<hr>
+								</font>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Defense </b> </p></div>
+								</div>
+								<font size="2">
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Armor		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 9,291	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Block Amount		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">  Block Chance	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Dodge Chance	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Phsical Resistance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,923	</div>
+								</div> <!-- end internal row -->								
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Cold Resistance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,923	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Fire Resistance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 2,243	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Lightning Resistance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,923	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Poison Resistance		</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 2,243	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Arcane/Holy Resistance	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,923	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Crowd Control Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 40.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Missile Dmg Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 7.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Melee Dmg Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 7.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Elite Dmg Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Thorns	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 16,336	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Damage Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 60.00%</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Toughness per 100 Vit	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,010,162</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Toughness per Life Bonus</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 229,415	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Toughness per 100 Armor</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 277,998	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Toughness per 100 Resist</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 1,494,048	</div>
+								</div> <!-- end internal row -->
+								<hr>
+								</font>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Life </b> </p></div>
+								</div>
+								<font size="2">
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Maximum Life	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 545,625	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Total Life Bonus	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +55.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Life per Second	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.00	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Life per Hit	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.00	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Life per Kill	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 20,798	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Health Globe Heal Bonus	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 118,852	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Bonus Globe Pickup Radius	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 2.0	</div>
+								</div> <!-- end internal row -->
+								<hr>
+								</font>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Resource </b> </p></div>
+								</div>
+								<font size="2">
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Max Arcane Power	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 80	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Arcane Regen/Second	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 10	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Arcane Cost Reduction	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 10.00%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Arcane Power on Crit	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0	</div>
+								</div> <!-- end internal row -->
+
+								<hr>
+								</font>
+								<div class="row">
+									<div class="col-md-12"><p style="text-align: center; font-size:13pt;"> <b> Adventure </b> </p></div>
+								</div>
+								<font size="2">
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Movement Speed	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +25.00%</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Gold Find	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Magic Find	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Bonus Experience	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> +0.0%	</div>
+								</div> <!-- end internal row -->
+								<div class="row">
+									<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"> Bonus Exp per Kill	</div>
+									<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 0.0	</div>
+								</div> <!-- end internal row -->
+								</font>
+							</div> <!-- end Stat Total ScrollBox -->
+						</div> <!-- row ender -->
+					</div>
+					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						<div class="row">
+							<ul class="nav nav-tabs nav-justified" role="tablist" style="width:500px;overflow-y:hidden;">
+								<style>
+									li > li.active {background-color:black;}
+									.sidebar-nav-fixed > li, .sidebar-nav-fixed  li > a { width:150px; text-align:left;	padding-left:0pt; }
+									.sidebar-nav-fixed{ width:150px; margin:2px; }	.nav-header > p { width:140px; text-align:left; padding-left:0pt;} 
+								</style>
+								<li class="active"><a href="#Helm" data-toggle="tab">Helm</a></li>
+								<li><a href="#Shoulders" data-toggle="tab">Shoulders</a></li>
+								<li><a href="#Neck" data-toggle="tab">Neck</a></li>
+								<li><a href="#Torso" data-toggle="tab">Torso</a></li>								
+								<li><a href="#Waist" data-toggle="tab"> Waist </a> </li>
+								<li><a href="#Hands" data-toggle="tab"> Hands </a> </li>
+								<li><a href="#Wrists" data-toggle="tab"> Wrists </a> </li>
+								<li><a href="#Legs" data-toggle="tab"> Legs </a> </li>
+								<li><a href="#Feet" data-toggle="tab"> Feet </a> </li>
+								<li><a href="#LeftFinger" data-toggle="tab"> LeftFinger </a> </li>
+								<li><a href="#RightFinger" data-toggle="tab"> RightFinger </a> </li>
+								<li><a href="#MainHand" data-toggle="tab"> MainHand </a> </li>
+								<li><a href="#OffHand" data-toggle="tab"> OffHand </a> </li>
+							</ul>
+						</div>
+						<div class="row">
+							<div class="tab-content">
+								<div class="tab-pane active" id="Helm"> 
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Tal Rasha's Guise of Wisdom</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Helm/Tal_Rasha's_Guise_of_Wisdom.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Helm
+													</div>
+													<div class="row">
+														<h4> 397-471 Armor </h4>
+													</div>
+													<div class="row">
+														Head
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Critical Hit Chance Increased by 4.5-6.0 %</div>
+													<div class="row">	+ 626-750 Intelligence	 	</div>
+													<div class="row">	* Empty Socket </div>
+													<div class="row">	+3 Random Magic Properties	</div>
+													<div class="row">		</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> Damaging enemies with Arcane, Cold, Fire, or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.</p><br>
+											(4) Set: <br>
+											<p>Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds. </p> <br>
+											(6) Set: <br>
+											<p>Attacks increase your damage by 500% for 8 seconds. Arcane, Cold, Fire, and Lightning attacks each add one stack. At 4 stacks, each different elemental attack extends the duration by 3 seconds, up to a maximum of 8 seconds.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Shoulders"> 
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Firebird's Pinions</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Shoulders/Firebird's_Pinions.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Shoulders
+													</div>
+													<div class="row">
+														<h4> 586-674 Armor </h4>
+													</div>
+													<div class="row">
+														Shoulders
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Reduces all resource costs by 5-8%</div>
+													<div class="row">	+ 416-500 Intelligence	 	</div>
+													<div class="row">	+3 Random Magic Properties	</div>
+													<div class="row">		</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> When you die, a meteor falls from the sky and revives you.
+											This effect has a 60 second cooldown.</p><br>
+											(4) Set: <br>
+											<p> Dealing FIre damage causes the enemy to take the same amountof damage over 3 seconds, stacking up to 3000% weapon damage as Fire per second. After reaching 3000% damage per second, the enemy will burn until they die. </p> <br>
+											(6) Set: <br>
+											<p>Your damage is increased by 25% for each enemy that is burning. Elites that are burning increase your damage by 600%. Youcan only have one Elite damage bonus active at a time.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Neck">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Tal Rasha's Allegiance</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Neck/Tal_Rasha's_Allegiance.png" width="64" height="64">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Amulet
+													</div>
+													<div class="row">
+														Neck
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row"> * Critical Hit Damage Increased by 51.0-100.0%</div>
+													<div class="row"> + 330-524 Intelligence	 	</div>
+													<div class="row"> +4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> Damaging enemies with Arcane, Cold, Fire, or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.</p><br>
+											(4) Set: <br>
+											<p>Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds. </p> <br>
+											(6) Set: <br>
+											<p>Attacks increase your damage by 500% for 8 seconds. Arcane, Cold, Fire, and Lightning attacks each add one stack. At 4 stacks, each different elemental attack extends the duration by 3 seconds, up to a maximum of 8 seconds.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Torso">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Tal Rasha's Relentless Pursuit</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Torso/Tal_Rasha's_Relentless_Pursuit.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Chest Armor
+													</div>
+													<div class="row">
+														<h4> 397-471 Armor </h4>
+													</div>
+													<div class="row">
+														Torso
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	+220-349 Vitality			</div>
+													<div class="row">	+ 220-349 Intelligence	 	</div>
+													<div class="row">	+2 Random Magic Properties	</div>
+													<div class="row">	+ 3 Sockets		</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> Damaging enemies with Arcane, Cold, Fire, or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.</p><br>
+											(4) Set: <br>
+											<p>Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds. </p> <br>
+											(6) Set: <br>
+											<p>Attacks increase your damage by 500% for 8 seconds. Arcane, Cold, Fire, and Lightning attacks each add one stack. At 4 stacks, each different elemental attack extends the duration by 3 seconds, up to a maximum of 8 seconds.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Waist">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>The Shame of Delseree</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Belt/The_Shame_of_Delseree.png" width="64" height="64">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Legendary Belt
+													</div>
+													<div class="row">
+														<h4>  440-506 Armor </h4>
+													</div>
+													<div class="row">
+														Belt
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Your signature attacks attack 50% faster and restore 9-12 arcane power.			</div>
+													<div class="row">	+ 416-500 Intelligence	 	</div>
+													<div class="row">	+4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+									</div>
+								</div>
+								<div class="tab-pane" id="Hands">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Tal Rasha's Grasp</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Gloves/Tal_Rasha's_Grasp.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Gloves
+													</div>
+													<div class="row">
+														<h4> 590 Armor </h4>
+													</div>
+													<div class="row">
+														Hands
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Critical Hit Chance increased by 8-10%</div>
+													<div class="row">	+ 640-750 Intelligence	 	</div>
+													<div class="row">	+4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> Damaging enemies with Arcane, Cold, Fire, or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.</p><br>
+											(4) Set: <br>
+											<p>Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds. </p> <br>
+											(6) Set: <br>
+											<p>Attacks increase your damage by 500% for 8 seconds. Arcane, Cold, Fire, and Lightning attacks each add one stack. At 4 stacks, each different elemental attack extends the duration by 3 seconds, up to a maximum of 8 seconds.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Wrists">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Ashnagarr's Blood Bracers</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Bracers/Ashnagarr's_Blood_Bracer.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Legendary Bracers
+													</div>
+													<div class="row">
+														<h4> 421 Armor </h4>
+													</div>
+													<div class="row">
+														Wrists
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Critical Hit Chance increased by 4.5-6 %</div>
+													<div class="row">	+ 500 Intelligence	 	</div>
+													<div class="row">   *Increase the potency of your shields by 75-100%. </div>
+													<div class="row">	+3 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+									</div>
+								</div>
+								<div class="tab-pane" id="Legs">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Tal Rasha's Stride</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Pants/Tal_Rasha's_Stride.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Pants
+													</div>
+													<div class="row">
+														<h4> 759 Armor </h4>
+													</div>
+													<div class="row">
+														Legs
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Critical Hit Chance increased by 8-10%</div>
+													<div class="row">	+ 640-750 Intelligence	 	</div>
+													<div class="row">	+4 Random Magic Properties	</div>
+													<div class="row">	+2 Empty Sockets </div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> Damaging enemies with Arcane, Cold, Fire, or Lightning will cause a Meteor of the same damage type to fall from the sky. There is an 8 second cooldown for each damage type.</p><br>
+											(4) Set: <br>
+											<p>Arcane, Cold, Fire, and Lightning attacks each increase all of your resistances by 25% for 8 seconds. </p> <br>
+											(6) Set: <br>
+											<p>Attacks increase your damage by 500% for 8 seconds. Arcane, Cold, Fire, and Lightning attacks each add one stack. At 4 stacks, each different elemental attack extends the duration by 3 seconds, up to a maximum of 8 seconds.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="Feet">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Firebird's Tarsi</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Boots/Firebird's_Tarsi.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Boots
+													</div>
+													<div class="row">
+														<h4> 759 Armor </h4>
+													</div>
+													<div class="row">
+														Feet
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Critical Hit Chance increased by 8-10%</div>
+													<div class="row">	+ 400-500 Vitality	 	</div>
+													<div class="row"> 	+ 400-500 Intelligence </div>
+													<div class="row">	+4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> When you die, a meteor falls from the sky and revives you.
+											This effect has a 60 second cooldown.</p><br>
+											(4) Set: <br>
+											<p> Dealing FIre damage causes the enemy to take the same amountof damage over 3 seconds, stacking up to 3000% weapon damage as Fire per second. After reaching 3000% damage per second, the enemy will burn until they die. </p> <br>
+											(6) Set: <br>
+											<p>Your damage is increased by 25% for each enemy that is burning. Elites that are burning increase your damage by 600%. Youcan only have one Elite damage bonus active at a time.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="LeftFinger">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Focus</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Ring/Focus.png" width="64" height="64">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Ring
+													</div>
+													<div class="row">
+														<h4></h4>
+													</div>
+													<div class="row">
+														Finger
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	+ Empty Socket </div>
+													<div class="row"> 	+ 400-500 Intelligence </div>
+													<div class="row">	+4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p>When you hit with a resource-generating attack or primary skill, deal 50% increased damage for 5 seconds.</p><br>
+											(4) Set: <br>
+											<p> When you hit with a resource-spending attack, deal 50% increased damage for 5 seconds. </p> <br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="RightFinger">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Restraint</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Ring/Restraint.png" width="64" height="64">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Ring
+													</div>
+													<div class="row">
+														<h4></h4>
+													</div>
+													<div class="row">
+														Finger
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	+ Empty Socket </div>
+													<div class="row"> 	+ 400-500 Intelligence </div>
+													<div class="row">	+4 Random Magic Properties	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p>When you hit with a resource-generating attack or primary skill, deal 50% increased damage for 5 seconds.</p><br>
+											(4) Set: <br>
+											<p> When you hit with a resource-spending attack, deal 50% increased damage for 5 seconds. </p> <br>
+											</font>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane" id="MainHand">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4>Fragment of Destiny</h4>
+											</div>
+											<font size="1">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Weapons/Fragment_of_Destiny.png" width="64" height="64">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Legendary Wand
+													</div>
+													<div class="row">
+														<h4>  440-506 Armor </h4>
+													</div>
+													<div class="row">
+														Main Hand
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	* Spectral Blade attacks 50% faster and does 200% increased damage.			</div>
+													<div class="row">	+ 641-750 Intelligence	 	</div>
+													<div class="row">	+3 Random Magic Properties	</div>
+													<div class="row">	+1200-1500 Damage (Elemental)	</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+									</div>
+								</div>
+								<div class="tab-pane" id="OffHand">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+													<h4> Firebird's Eye </h4>
+											</div>
+											<font size="2">
+											<div class="row">
+												<div class="col-md-6">
+													<img src="./Images/items/Weapons/Firebird's_Eye.png" width="64" height="128">
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														Set Source
+													</div>
+													<div class="row">
+														Off-Hand
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row"><u>	Primary Stats </u></div>
+													<br>
+													<div class="row">	+ (262-328)-(263-394) Damage	</div>
+													<div class="row">	- Fire Skills deal 15%-20% more damage.	</div>
+													<div class="row">	+ 626-750 Intelligence	</div>
+													<div class="row">	+4 Random Magic Properties	</div>
+													<div class="row">		</div>
+												</div>
+											</div>
+											</font>
+										</div> <!-- First Gear Item Column Done -->
+										<div class="col-md-6">
+											<font size="2">
+											<u> Set Bonuses: </u> <br><br>
+											(2) Set: <br>
+											<p> When you die, a meteor falls from the sky and revives you.
+											This effect has a 60 second cooldown.</p><br>
+											(4) Set: <br>
+											<p> Dealing FIre damage causes the enemy to take the same amountof damage over 3 seconds, stacking up to 3000% weapon damage as Fire per second. After reaching 3000% damage per second, the enemy will burn until they die. </p> <br>
+											(6) Set: <br>
+											<p>Your damage is increased by 25% for each enemy that is burning. Elites that are burning increase your damage by 600%. Youcan only have one Elite damage bonus active at a time.</p><br>
+											</font>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><!-- Empty Right Margin-Creation. COMMENT OUT BEFORE PUBLISHING --></div>
+</div>
+</body>
+
+</html>

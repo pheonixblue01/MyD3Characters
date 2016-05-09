@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> My D3 Characters </title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">	<link href="./css/custom.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:black; font-color:#A8A8A8;">
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./index.html"> Home </a>				</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2A.html"> Part A </a>			</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2B-1.html"> Part B </a>		</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2C.html"> Part C </a>			</div>	</div>
+<div class="page-header" align="center" style="padding-top:0px; padding-bottom:0px">
+	<style> .logoholder{ width:1050px; height:135px;}	</style>
+	<div class="logoholder">	<img src="./Images/Header-Left.png" style="float:left">
+	<img src="./Images/AccountLogo.png"  style="float:left">	<img src="./Images/Header-Right.png"  style="float:left"></div>	
+</div>
+<div class"row">	
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+	<style> .nav-pills  li.active a, .nav-pills li.active a:hover {background-color:#000000; vertical-align:middle;}
+			.nav-pills li.doubleListItem a, .nav-pills li.doubleListItem a:hover {padding-top:0pt; padding-bottom: 0pt;}
+	</style>
+	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+		<ul class="nav nav-pills nav-justified">
+			<li role="presentation">				<a href="./Project2D.html">Home</a>						</li>
+			<li role="presentation" class="active">	<a href="./Project2D-MyAccount.html">Account</a>		</li>
+			<li role="presentation">				<a href="./Project2D-MyCharacters.html">Characters</a>	</li>
+			<li role="presentation">				<a href="./Project2D-Classes.html">Classes</a>			</li>
+			<li role="presentation">				<a href="./Project2D-Login.html">Login</a>				</li>
+			<li role="presentation">				<a href="./Project2D-Register.html">Register</a>		</li>
+		</ul>
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+</div>
+	<br><br><hr>
+<div class="row">	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- empty row to create space --></div>	</div>
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"> </div>
+	<div class="col-md-10">	<p>
+		<div class="section">	<h4><b>Personal Settings 	</b></h4>	<br>
+			<div class="row">
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+				<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b> First Name:	</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2"> "First name here"</div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b> Last Name:	</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2"> "Last name here"</div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Username:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2"> "Username here"</div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b> Email:	</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Email here"</div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Email Verified:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Verification Status"</div>
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Email Notification <br> Preferences:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">	
+							<div class="dropdown">
+								<button class"btn btn-primary dropdown-toggle" type="button" position="cursor" data-toggle="dropdown" style="width:175px;background-color:black; font-color:white;">Change Verification
+									<span class="caret"></span>
+								</button>
+									<style>	.dropdown-menu li:hover, .dropdown-menu li:focus { color:black; background-color:#3D59AB; background-image:none; filter:none;}	
+											.dropdown-menu{background-color:black; font-color:gray;}</style>
+								<ul class="dropdown-menu scrollable-menu" id="notification_Settings" onclick="changeNotif()" role="menu"
+									style="height:auto; max-height: 100px; overflow-x:hidden;">
+									<li style="width:205px;">No Notifications Allowed</li>
+									<li style="width:205px;">All Account Info Changes</li>
+									<li style="width:205px;">Password Changes Only</li>
+									<li style="width:205px;">Administrator Notifications Only</li>
+									<li style="width:205px;"> All Notifications Allowed </li>
+								</ul>	
+							</div>	
+						</div>	
+						<div class="col-md-2"><input type="Submit" value="Submit" style="background-color:black; font-color:gray;border-color:white;"> </div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Current Time Zone:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Curr TZ Here"</div>	
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:7pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Email Notification <br> Preferences:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">
+							<div class="dropdown">
+								<button class"btn btn-primary dropdown-toggle" type="button" position="cursor" data-toggle="dropdown" style="width:175px;background-color:black; font-color:white">Change Time Zone
+								<span class="caret"></span></button>
+								<style>	.dropdown-menu li:hover, .dropdown-menu li:focus {color:black; background-color:#3D59AB; background-image:none;	filter:none; }.dropdown-menu {background-color:black; font-color:white}}	</style>
+
+								<ul class="dropdown-menu scrolldown-menu" id="notification_Settings" onclick="changeNotif()" role="menu"
+									style="height:auto; max-height: 100px; overflow-x:hidden;">
+									<li style="width:150px;">UTC - 12:00 </li>	<li style="width:150px;">UTC - 11:00 </li>	<li style="width:150px;">UTC - 10:00 </li>
+									<li style="width:150px;">UTC - 9:00 </li>	<li style="width:150px;">UTC - 8:00 </li>	<li style="width:150px;">UTC - 7:00 </li>
+									<li style="width:150px;">UTC - 6:00 </li>	<li style="width:150px;">UTC - 5:00 </li>	<li style="width:150px;">UTC - 4:00 </li>
+									<li style="width:150px;">UTC - 3:00 </li>	<li style="width:150px;">UTC - 2:00 </li>	<li style="width:150px;">UTC - 1:00 </li>
+									<li style="width:150px;">UTC +/- 00:00 </li><li style="width:150px;">UTC + 1:00 </li>	<li style="width:150px;">UTC + 2:00 </li>
+									<li style="width:150px;">UTC + 3:00 </li>	<li style="width:150px;">UTC + 4:00 </li>	<li style="width:150px;">UTC + 5:00 </li>
+									<li style="width:150px;">UTC + 6:00 </li>	<li style="width:150px;">UTC + 7:00 </li>	<li style="width:150px;">UTC + 8:00 </li>
+									<li style="width:150px;">UTC + 9:00 </li>	<li style="width:150px;">UTC + 10:00 </li>	<li style="width:150px;">UTC + 11:00 </li>
+									<li style="width:150px;">UTC + 12:00 </li>	<li style="width:150px;">UTC + 13:00 </li>	<li style="width:150px;">UTC + 14:00 </li>
+								</ul>	
+							</div>	
+						</div>	
+						<div class="col-md-2"><input type="Submit" value="Submit" style="background-color:black; font-color:white;"> </div>
+					</div>	<br>
+					<div class="row" style="padding-top: 5pt; padding-bottom:5pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Xbox Live Username:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Username here"</div>	
+					</div>						
+					<div class="row" style="padding-top: 5pt; padding-bottom:5pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Playstation Plus <br> Username:</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Username here"</div>		
+					</div>
+					<div class="row" style="padding-top: 5pt; padding-bottom:5pt;">
+						<div class="col-md-2" style="text-align:center;"><b>Blizzard Battle-Tag</b></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-md-2">"Username here"</div>		
+					</div>	<br>
+					<div class="row" style="padding-top: 10pt; padding-bottom:10pt;">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="text-align:right;"><input type="submit" value="Change Email" style="background-color:black; font-color:gray;border-color:white;"></div>	
+						<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><input type="submit" value="Change Password"  style="background-color:black; font-color:gray;border-color:white;"> </div>	
+					</div>
+				</div>
+			</div>		
+		</div>	<hr> <br>
+		<div class="section">	<h4><b> Forum Settings 	</b></h4>
+			<br>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b> Forum Display Name</b></div>
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2"> "Display Name Here"</div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>Change Display Name:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-3"><input type="display_name" style="background-color:black; font-color:gray;border-color:white;"></div>
+				<div class="col-md-1"><input type="Submit" value="Update" style="background-color:black; font-color:gray;border-color:white;"></div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b> Signature:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2" readonly="true"><input type="text" readonly="readonly" style="height:150px; width:400px; border-style:solid; border-width:1px;background-color:black; font-color:gray;"></div>
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>Edit Signature:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-3"><input type="signature-block" style="width:350px; background-color:black; font-color:gray; "></div>
+				<div class="col-md-1"><input type="Submit" value="Save Signature"style="background-color:black; font-color:gray;border-color:white;"></div>
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>Avatar</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2">"Your Avatar here"</div>	
+			</div>
+			<br><br>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>Change Avatar</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-3"><input type="file" value="Browse" style="border-style: solid; border-width:1px; width:315px;background-color:black; font-color:gray;border-color:white;" ></div>
+				<div class="col-md-2"><input type="submit"value="Submit File" style=" background-color:black; font-color:gray;border-color:white;"></div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b> Forum Notifications:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2"> "Current Setting Display"</div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>Change Notification Settings<br></b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2">
+					<style>
+						.dropdown-menu > li:hover, .dropdown-menu > li:focus {	color:black;	background-color:#3D59AB;	background-image:none;	filter:none;	}
+					</style>
+					<div class="dropdown">
+						<button class"btn btn-primary dropdown-toggle" type="button" position="cursor" data-toggle="dropdown" style="width:175px;background-color:black; font-color:gray;border-color:white;">Change Settings
+						<span class="caret"></span></button>
+						<ul class="dropdown-menu scrollable-menu" onclick="changeNotif()" role="menu" style="height:auto; max-height: 100px; overflow-x:hidden; background-color:black; font-color:gray;border-color:white;">
+							<li style="width:205px;">No Notifications Allowed</li>
+							<li style="width:205px;">Forum Access Changes</li>
+							<li style="width:205px;">Replies to my posts</li>
+							<li style="width:205px;">Replies to my topics</li>
+							<li style="width:205px;">Replies to topics I follow</li>
+							<li style="width:205px;">All Notifications Allowed</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2"><input type="Submit" value="Submit"style="background-color:black; font-color:gray;border-color:white;"> </div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b> My Topics:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2"><a href="Project2D-MyAccont.html">View my threads</a></div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b> Threads I follow:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2"><a href="Project2D-MyAccont.html">View threads I've replied to</a></div>	
+			</div>
+			<div class="row" style="padding-top: 7pt; padding-bottom:9pt;">
+				<div class="col-md-2" style="text-align:center;"><b>User Ignore List:</b></div>	
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-md-2"><a href="Project2D-MyAccont.html">My Ignore List</a></div>	
+			</div>
+		</div>	<hr>
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><!-- Empty Right Margin-Creation. COMMENT OUT BEFORE PUBLISHING --></div>
+</div>
+</body>
+
+
+</html>

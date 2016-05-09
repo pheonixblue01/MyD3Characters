@@ -1,0 +1,224 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> My D3 Characters </title>
+	<link href="./css/bootstrap.vertical-tabs.css" rel="stylesheet">
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/custom.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color:black; font-color:gray;border-color:#A8A8A8;">
+<div class="row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./index.html"> Home </a>				</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2A.html"> Part A </a>			</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2B-1.html"> Part B </a>		</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	<a href="./Project2C.html"> Part C </a>			</div>
+</div>
+<div class="page-header" align="center" style="padding-top:0px; padding-bottom:0px">
+	<style> .logoholder{ width:1050px; height:135px;}
+	</style>
+	<div class="logoholder">
+	<img src="./Images/Header-Left.png" style="float:left">
+	<img src="./Images/ClassesLogo.png"  style="float:left">
+	<img src="./Images/Header-Right.png"  style="float:left"></div>
+</div>
+<div class"row">
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+	<style> .nav-pills  li.active a, .nav-pills li.active a:hover {background-color:#000000; vertical-align:middle;}
+			.nav-pills li.doubleListItem a, .nav-pills li.doubleListItem a:hover {padding-top:0pt; padding-bottom: 0pt;}
+	</style>
+	<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+		<ul class="nav nav-pills nav-justified">
+			<li role="presentation">				<a href="./Project2D.html">Home</a>						</li>
+			<li role="presentation">				<a href="./Project2D-MyAccount.html">Account</a>		</li>
+			<li role="presentation">				<a href="./Project2D-MyCharacters.html">Characters</a>	</li>
+			<li role="presentation" class="active">	<a href="./Project2D-Classes.html">Classes</a>			</li>
+			<li role="presentation">				<a href="./Project2D-Login.html">Login</a>				</li>
+			<li role="presentation">				<a href="./Project2D-Register.html">Register</a>		</li>
+		</ul>
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">	</div>
+</div>
+	<br><br><hr>
+<div class="row">	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> <!-- empty row to create space --></div>	</div>
+
+<div class="row">
+
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+ <!--		<div class="sidebar-nav-fixed affix"> <ul class="nav nav-tabs tabs-left" style="width:9%;  background-color:black;font-color:gray;">
+			<style>
+				.nav-tabs{background-color:#000000;}
+				.tab-content{ background-color:black;font-color:gray; }
+				li.active { background-color:black;font-color:gray;}
+				.sidebar-nav-fixed > li > .active { background-color:black; font-color:gray;}
+				.sidebar-nav-fixed > li, .sidebar-nav-fixed  li > a {
+						width:150px;	text-align:left;	padding-left:0pt; background-color:black; font-color:gray;	}
+				.sidebar-nav-fixed{ width:150px;	margin:2px;	background-color:black;  font-color:gray;}
+				.nav-header > p { width:140px; text-align:left; padding-left:0pt; background-color:black; font-color:gray; }
+			</style>
+			<li style="background-color:black;font-color:gray;"><a href="#home" data-toggle="tab"> Classes Overview</a></li>
+			<li><a href="#Barbarian" data-toggle="tab"> Barbarian</a></li>
+			<li><a href="#Crusader" data-toggle="tab"> Crusader</a></li>
+			<li><a href="#DemonHunter" data-toggle="tab"> Demon Hunter</a></li>				
+			<li><a href="#Monk" data-toggle="tab"> Monk</a></li>
+			<li><a href="#WitchDoctor" data-toggle="tab"> Witch Doctor</a></li>
+			<li><a href="#Wizard" data-toggle="tab"> Wizard</a></li>
+		</ul>	</div>
+	</div>
+	--></div>
+	<div class="col-md-9">	
+
+	<!--<p>
+		<div class="tab-content">
+			<div class="tab-pane active" id="home">Home Tab. </div>
+			<div class="tab-pane" id="Barbarian"> Barbarian Tab </div>
+			<div class="tab-pane" id="Crusader"> Crusader Tab </div>
+			<div class="tab-pane" id="DemonHunter"> Demon Hunter Tab </div>
+			<div class="tab-pane" id="Monk"> Monk Tab </div>
+			<div class="tab-pane" id="WitchDoctor"> Witch Doctor Tab </div>
+			<div class="tab-pane" id="Wizard"> Wizard Tab </div>
+		</div>			
+		</p>	-->	
+	<style>
+	hr{border-color: gray;}
+	</style>
+
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center> <img src="./Images/barbarian_image.png"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4"  style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:400px;"><center> <h3><font color="red"> The Barbarian </font> </h3></center>
+		<br>
+		<br>
+		<font size="4pt">
+		The Barbarian is a massive, heavily-armed warrior, a wanderer from a tribe that once guarded the sacret Mount Areat.
+
+		<ul>
+			<li>Fights savagely with melee weapons.		</li>
+			<li>Utilizes brute strength to wield mighty two-handed weapons, a weapon in both hands, or a weapon and a shield.</li>
+			<li>Builds up Fury when taking or dealing damage, then unleashes it in devastating attacks.</li>
+		</ul>
+
+		</div>
+		</font>
+	</div> <!-- Barbarian End -->
+	<br>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center>	<img src="./Images/crusader_image.jpg"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4"  style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:525px;"><center> <h3><font color="orange">The Crusader </font></h3></center>
+			<br>
+			<br>
+			<font size="4pt">
+			The Crusader is a champion of justice adorned with metal armor and gleaming power. When evil emerges from its lair to twist and destroy humankind, the Crusader charges.
+				<ul>
+					<li>Passes down judgment with cruel flails and towering shields—the latter as much weapon as armor.			</li>
+					<li>Forces the hosts of evil to fight (up-close or at medium range) with a myriad of abilities, and pronounces laws to augment the combat prowess of all 
+					who oppose darkness. </li>
+					<li>Simmers with Wrath, a steadily mounting fervor, to unleash even more punishing attacks.</li>
+				</ul>
+
+			</font>
+
+		</div>
+	</div> <!-- Crusader End -->
+	<br>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center>	<img src="./Images/demon_hunter_2.jpg"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4"  style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:500px;"><center> <h3><font color="purple">The Demon Hunter </font></h3> </center>
+			<br>
+			<br>
+			<font size="4pt">
+				The Demon Hunter is the survivor of a demonic attack who has dedicated body and soul in an unending quest to rid the world of the influence of the demons that threaten Sanctuary
+				<ul>
+					<li>Deals death to foes with long-range weaponry like grenades, bows, and crossbows.</li>
+					<li>Remains mobile with avoidance powers, and snares enemies in place with 
+					careful traps.	</li>
+					<li>Relies on Hatred, a swiftly regenerating inner fire, and Discipline, a moderate reservoir of marksmanship skill.</li>
+				</ul>
+
+			</font>
+
+		</div>
+	</div> <!-- Demon Hunter End -->
+	<br>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center>	<img src="./Images/monk_image.jpg"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4"  style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:435px;"><center> <h3><font color="yellow">The Monk </font></h3></center>
+			<br>
+			<br>
+			<font size="4pt">
+				The Monk is a holy warrior, a servant of the divine whose body has been honed into a deadly weapon.
+				<ul>
+					<li>Strikes down evil with lightning-quick fists and unique melee weapons like punch daggers and monk staves.	</li>
+					<li>Calls upon the power of his thousand and one gods to protect, shield, heal, and banish.</li>
+					<li>Generates Spirit, an inner strength that fuels the monk’s mobility and dodging in combat.</li>
+				</ul>
+
+			</font>
+
+		</div>
+	</div> <!-- Monk End -->
+	<br>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center> <img src="./Images/witch_doctor_image.jpg"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:450px"><center> <h3> <font color="green">The Witch Doctor </font></h3></center>
+			<br>
+			<br>
+			<font size="4pt">
+				The Witch Doctor weaves the power of the spirits of the Unformed Land, summoning creatures from beyond the grave.
+				<ul>
+					<li>Summons frightful undead, vermin, and other creatures for protection and offense.</li>
+					<li>Uses destructive poison, acid, and fire attacks.</li>
+					<li>Powers spells and summons with Mana, a slow-accruing but deep well of energy.</li>
+				</ul>
+
+			</font>
+
+			</div>
+
+	</div> <!-- Witch Doctor End -->
+
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<center>	<img src="./Images/wizard_image.png"  style="align: center"> </center>
+		</div>
+		<div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="border-bottom-color: gray; border-bottom-style:solid; border-bottom-width:1pt; height:409px;"><center> <h3><font color="blue">The Wizard</font> </h3> </center>
+			<br>
+			<br>
+			<font size="4pt">
+				The Wizard is an arcane prodigy who commands time and the elements in the pursuit of destiny and power.
+				<ul>
+					<li>Wields arcane magics, manipulating space, time, and the natural and 
+					mystic elements.</li>
+					<li>Freezes, incinerates, and restrains foes.	</li>
+					<li>Invokes magic rapidly with Arcane Power, a quickly-regenerating reservoir 
+					of power.</li>
+				</ul>
+
+			</font>
+		</div>
+	</div> <!-- Wizard End -->
+	<br><br><br><br>
+
+Character names and descriptions are taken directly from and copywritten by Blizzard Entertainment, Diablo III.<br><br>
+	</div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><!-- Empty Right Margin-Creation. COMMENT OUT BEFORE PUBLISHING --></div>
+</div>
+<br><br><br>
+</body>
+</html>
